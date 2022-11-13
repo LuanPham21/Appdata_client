@@ -1,0 +1,11 @@
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+.navbar-expand-lg{
+    justify-content: space-around;
+}
+.navbar__tingwork{
+    width: 40%;
+    display: flex;
+}

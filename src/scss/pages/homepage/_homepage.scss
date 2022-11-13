@@ -1,0 +1,14 @@
+.home__page{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    .text__home{
+        text-align: center;
+        color: rgb(60, 179, 113);
+        margin: 80px;
+        font-size: 20px;
+    }
+    .img__home{
+        text-align: center;
+    }
+}

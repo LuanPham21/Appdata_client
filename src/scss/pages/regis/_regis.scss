@@ -1,0 +1,11 @@
+.regis__form{
+    background: $color;
+    height: 1024vh;
+    width: 100%;
+    .regis__card{
+        background-color: transparent;
+        background-clip: border-box; 
+        border: transparent; 
+        border-radius: none;
+    }
+}

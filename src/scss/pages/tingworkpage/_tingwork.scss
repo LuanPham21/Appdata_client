@@ -1,0 +1,49 @@
+.tingwork__content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom :50px;
+    .btn-primary{
+        background-color: $colorButton;
+        border-color:  $colorButton;
+        width: 140px;
+        &:active{
+            background-color: $colorButton !important;
+            border-color:  $colorButton !important;
+        }
+        &:hover{
+            background-color: $colorButton_Hover;
+            border-color:  $colorButton_Hover;
+        }
+        &:focus{
+            background-color: $colorButton_Hover;
+            border-color:  $colorButton_Hover;
+        }
+    }
+}
+.tingwork__login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .btn-primary{
+        color: #000;
+        background-color: $colorButton_Login;
+        border-color:  $colorButton_Login;
+        margin-bottom: 20px;
+        text-align: left;
+        &:active{
+            color: #000 !important;
+            background-color: $colorButton_Login !important;
+            border-color:  $colorButton_Login !important;
+        }
+        &:hover{
+            color: #000;
+            background-color: $colorButton_Login;
+            border-color:  $colorButton_Login;
+        }
+        &:focus{
+            color: #000;
+            background-color: $colorButton_Login !important;
+            border-color:  $colorButton_Login;
+        }
+    }
+}
