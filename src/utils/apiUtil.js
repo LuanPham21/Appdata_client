@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/user/v1/",
+  baseURL: "https://tingwork.herokuapp.com/api/user/v1/",
 });
 
 api.interceptors.request.use(

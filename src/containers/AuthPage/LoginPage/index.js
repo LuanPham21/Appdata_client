@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { actLogin } from "./reducer/action";
 import { useNavigate, Navigate } from "react-router-dom";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { actLogin } from "./reducer/action";
 import { useParams } from "react-router-dom";
 import logo from "./../../../assest/img/logo.png";
-import { api } from "utils/apiUtil";
+
 export default function LoginPage() {
-  // const prop = useSelector((state) => state.LoginAuthReducer);
+  const prop = useSelector((state) => state.LoginAuthReducer);
   // console.log(prop);
   const dispatch = useDispatch();
   const params = useParams();
@@ -17,10 +17,6 @@ export default function LoginPage() {
     username: "",
     password: "",
   });
-
-  console.log(params);
-  const id = params;
-  console.log(id);
 
   const handleChange = (event) => {
     let { name, value } = event.target;
@@ -32,16 +28,22 @@ export default function LoginPage() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    if (state.username === "lechanpham") {
-      if (state.password === "12345678") {
-        alert("Đăng nhập thành công");
-        navigate("/homepage", { replace: true });
-      } else {
-        alert("Mật khẩu không đúng");
-      }
-    } else {
-      alert("Tài khoản không đúng");
-    }
+    // if (state.username === "lechanpham") {
+    //   if (state.password === "12345678") {
+    //     alert("Đăng nhập thành công");
+    //     navigate("/homepage", { replace: true });
+    //   } else {
+    //     alert("Mật khẩu không đúng");
+    //   }
+    // } else {
+    //   alert("Tài khoản không đúng");
+    // }
+    dispatch(actLogin(state, navigate));
+  };
+
+  const renderNoti = () => {
+    const { error } = prop;
+    return error && <div className="alert alert-danger">{error}</div>;
   };
 
   return (
@@ -54,6 +56,7 @@ export default function LoginPage() {
           <img style={{ width: "100%" }} src={logo} />
         </section>
         <Card.Body>
+          {renderNoti()}
           <form onSubmit={handleLogin}>
             <div>
               <Form.Control

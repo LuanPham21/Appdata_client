@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
+import { actRegis } from "./reducer/action";
 import { useNavigate, Link } from "react-router-dom";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import logo from "./../../../assest/img/logo.png";
 import { api } from "utils/apiUtil";
 
 export default function RegisPage() {
-  // const prop = useSelector((state) => state.RegisAuthReducer);
+  const prop = useSelector((state) => state.RegisAuthReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
@@ -16,7 +16,6 @@ export default function RegisPage() {
   const [state, setState] = useState({
     username: "",
     password: "",
-    role: params,
   });
 
   const handleChange = (event) => {
@@ -29,16 +28,12 @@ export default function RegisPage() {
 
   const handleRegis = (event) => {
     event.preventDefault();
-    if (state.username === "lechanpham") {
-      if (state.password === "12345678") {
-        alert("Đăng kí thành công");
-        navigate("/auth/login/2", { replace: true });
-      } else {
-        alert("Vui lòng đặt lại mặt khẩu");
-      }
-    } else {
-      alert("Tài khoản đã tồn tại");
-    }
+    dispatch(actRegis(state, navigate));
+  };
+
+  const renderNoti = () => {
+    const { error } = prop;
+    return error && <div className="alert alert-danger">{error}</div>;
   };
 
   return (
@@ -54,6 +49,7 @@ export default function RegisPage() {
           Đăng kí
         </Card.Header>
         <Card.Body>
+          {renderNoti()}
           <form onSubmit={handleRegis}>
             <div>
               <Form.Control
