@@ -15,10 +15,18 @@ const routes = [
         path: "homepage",
         element: lazy(() => import("../containers/Home/HomePage")),
       },
-      // {
-      //   path: "profile",
-      //   element: lazy(() => import("./../containers/Home/Profile")),
-      // },
+      {
+        path: "messpage",
+        element: lazy(() => import("../containers/Home/MessPage")),
+      },
+      {
+        path: "personalpage",
+        element: lazy(() => import("../containers/Home/PersonalPage")),
+      },
+      {
+        path: "mewpage",
+        element: lazy(() => import("../containers/Home/Mew")),
+      },
     ],
   },
   // Auth Page

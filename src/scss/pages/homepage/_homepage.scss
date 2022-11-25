@@ -1,14 +1,37 @@
-.home__page{
-    width: 100%;
+.img__home{
+    text-align: center;
+    background: #000;
     height: 100%;
-    flex-direction: column;
-    .text__home{
+    .btn__top{
+        width: 345px;
+        display: flex;
+        top: 36px;
+        position: absolute;
+        align-items: center;
         text-align: center;
-        color: rgb(60, 179, 113);
-        margin: 80px;
-        font-size: 20px;
+        left: 40%;
+        justify-content: space-between;
+        button{
+            border: none;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+        }
     }
-    .img__home{
+    .btn__home{
+        width: 264px;
+        display: flex;
+        bottom: 36px;
+        position: absolute;
+        align-items: center;
         text-align: center;
+        left: 42.5%;
+        justify-content: space-between;
+        button{
+            border: none;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+        }
     }
 }

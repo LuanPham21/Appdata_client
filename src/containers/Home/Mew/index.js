@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import home from "./../../../assest/img/home.png";
+import mew from "./../../../assest/img/mew.png";
 
-export default function HomePage() {
+export default function MewPage() {
   const navigate = useNavigate();
   function handleBtn(e) {
     const id = e?.target?.id;
@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <div className="img__home">
-        <img src={home} />
+        <img src={mew} />
         <div className="btn__home">
           <button id="homepage" type="button" onClick={handleBtn}></button>
           <button id="messpage" type="button" onClick={handleBtn}></button>
